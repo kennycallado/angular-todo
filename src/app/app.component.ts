@@ -9,4 +9,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ts-angular-todo';
+  todoList = [
+    {title: "Go for a walk."},
+    {title: "Buy flowers"},
+    {title: "Take a break"},
+    {title: "Call my frends"},
+    {title: "Carry on"},
+  ];
 }
