@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { TodoItem } from "../interfaces/todo-item";
+
+import { TodoListService } from "../services/todo-list.service";
+import { TodoItem } from "../interfaces/todo-item"
 
 @Component({
   selector: 'app-list-manager',
@@ -7,21 +9,16 @@ import { TodoItem } from "../interfaces/todo-item";
   styleUrls: ['./list-manager.component.css']
 })
 export class ListManagerComponent implements OnInit {
-  todoList: TodoItem[] = [
-    {title: "Go for a walk."},
-    {title: "Buy flowers"},
-    {title: "Take a break"},
-    {title: "Call my frends"},
-    {title: "Carry on"},
-  ];
+  todoList: TodoItem[] = [];
 
-  constructor() {}
+  constructor(private todoListService: TodoListService) {}
 
   addItem(title: any) {
-    this.todoList.push({ title })
+    this.todoListService.addItem({title});
   }
 
   ngOnInit(): void {
+    this.todoList = this.todoListService.getTodoList();
   }
 
 }
