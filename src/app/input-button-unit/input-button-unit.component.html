@@ -1,1 +1,15 @@
-{{title}}
+<div class="pb-2">
+  
+  <p>Add a new task</p>
+  <input #input [title]="title"
+    (keyup.enter)="eventHandler($event.target)" />
+  <button
+    (click)="eventHandler(input)"
+    (keyup.enter)="eventHandler(input)" >
+    Save
+  </button>
+</div>
+<div class="m-2">
+
+  <p>{{title}}</p>  
+</div>

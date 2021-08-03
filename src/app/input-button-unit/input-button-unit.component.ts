@@ -6,16 +6,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./input-button-unit.component.css']
 })
 export class InputButtonUnitComponent implements OnInit {
-  title: string = "";
+  title = "";
 
   constructor() {
-    this.changeTitle("Hello world");
+  }
+
+  eventHandler(target: HTMLInputElement | any) {
+    if (target?.value) {
+      this.changeTitle(target?.value);
+    }
+    // Devuelve el foco
+    target?.focus();
+    // document.querySelector('input')?.focus();
   }
 
   changeTitle(newTitle: string) {
     this.title = newTitle;
-    }
-  // La voy a dejar al final
-  ngOnInit(): void {
   }
+
+  ngOnInit(): void {}
 }
