@@ -1,13 +1,5 @@
 <div class="container bg-info text-center">
-  <h2>Todo - list</h2>
+  <h2>{{title}}</h2>
   <hr class="text-secundary"/>
-
-  <app-input-button-unit (submit)="addItem($event)"></app-input-button-unit>
-
-  <ul class="list-group pb-2">
-    <li class="list-group-item mx-3"
-      *ngFor="let todoItem of todoList">
-    <app-todo-item [item]="todoItem"></app-todo-item>
-    </li>
-  </ul>
+  <app-list-manager></app-list-manager>
 </div>
