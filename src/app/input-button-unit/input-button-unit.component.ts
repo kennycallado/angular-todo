@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-input-button-unit',
@@ -8,20 +8,20 @@ import { Component, OnInit } from '@angular/core';
 export class InputButtonUnitComponent implements OnInit {
   title = "";
 
+  @Output() submit: EventEmitter<string> = new EventEmitter<string>();
+
   constructor() {
   }
 
   eventHandler(target: HTMLInputElement | any) {
     if (target?.value) {
-      this.changeTitle(target?.value);
+      this.submitValue(target?.value);
     }
-    // Devuelve el foco
     target?.focus();
-    // document.querySelector('input')?.focus();
   }
 
-  changeTitle(newTitle: string) {
-    this.title = newTitle;
+  submitValue(newTitle: string) {
+    this.submit.emit(newTitle);
   }
 
   ngOnInit(): void {}

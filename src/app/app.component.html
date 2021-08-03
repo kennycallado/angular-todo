@@ -2,7 +2,7 @@
   <h2>Todo - list</h2>
   <hr class="text-secundary"/>
 
-  <app-input-button-unit></app-input-button-unit>
+  <app-input-button-unit (submit)="addItem($event)"></app-input-button-unit>
 
   <ul class="list-group pb-2">
     <li class="list-group-item mx-3"
