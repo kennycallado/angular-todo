@@ -17,6 +17,7 @@ export class InputButtonUnitComponent implements OnInit {
     if (target?.value) {
       this.submitValue(target?.value);
     }
+    target.value = null;
     target?.focus();
   }
 

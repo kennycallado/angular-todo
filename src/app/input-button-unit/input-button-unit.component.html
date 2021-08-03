@@ -1,15 +1,15 @@
 <div class="pb-2">
   
   <p>Add a new task</p>
-  <input #input [title]="title"
-    (keyup.enter)="eventHandler($event.target)" />
-  <button
-    (click)="eventHandler(input)"
-    (keyup.enter)="eventHandler(input)" >
-    Save
-  </button>
-</div>
-<div class="m-2">
 
-  <p>{{title}}</p>  
+  <div class="input-group mb-3">
+    <input class="form-control" placeholder="Enter a task title"
+      #input [title]="title"
+     (keyup.enter)="eventHandler($event.target)" />
+    <div class="input-group-append">
+      <span class="input-group-text"
+        (click)="eventHandler(input)"
+      >Save</span>
+    </div>
+  </div>
 </div>
