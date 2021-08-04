@@ -9,7 +9,7 @@ export class StorageService {
 
   getData(key: string): any {
     let query = localStorage.getItem(key);
-    if (!query) throw new Error;
+    if (!query) return null;
 
     return JSON.parse(query);
   }

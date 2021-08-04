@@ -1,15 +1,16 @@
 import { Injectable } from '@angular/core';
+
 import { TodoItem } from '../interfaces/todo-item';
 import { StorageService } from './storage.service';
 
 const todoListStorageKey: string = "Todo_List";
 
 const defaultTodoList: TodoItem[] = [
-    {title: "Go for a walk."},
-    {title: "Buy flowers"},
-    {title: "Take a break"},
-    {title: "Call my frends"},
-    {title: "Carry on"},
+    // {title: "Go for a walk."},
+    // {title: "Buy flowers"},
+    // {title: "Take a break"},
+    // {title: "Call my frends"},
+    // {title: "Carry on"},
 ];
 
 @Injectable()

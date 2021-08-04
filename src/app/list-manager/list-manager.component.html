@@ -3,6 +3,10 @@
     (submit)="addItem($event)"></app-input-button-unit>
 
   <ul class="list-group pb-2">
+
+    <li *ngIf="todoList.length < 1"
+      class="list-group-item mx-3 bg-warning">Empty todoList</li>
+
     <li class="list-group-item mx-3 bg-secondary text-light"
       *ngFor="let todoItem of todoList">
     <app-todo-item [item]="todoItem"></app-todo-item>
