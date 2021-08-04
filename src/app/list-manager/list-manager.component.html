@@ -12,6 +12,7 @@
     <app-todo-item
       [item]="todoItem"
       (remove)="removeItem($event)"
+      (update)="updateItem($event.item, $event.changes)"
     ></app-todo-item>
     </li>
   </ul>

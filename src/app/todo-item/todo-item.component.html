@@ -1,4 +1,13 @@
 <div>
- {{item.title}}
+  <div class="form-check float-left">
+    <input
+      type="checkbox"
+      class="form-check-input"
+      [checked]="item.completed"
+      (click)="completeItem()"/>
+  </div>
+  <span
+    [ngClass]="{'todo-complete': item.completed}"
+  >{{item.title}}</span>
  <button class="close" (click)="removeItem()"><span>&times;</span></button>
 </div>
