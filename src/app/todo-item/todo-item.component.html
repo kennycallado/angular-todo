@@ -1,5 +1,5 @@
 <div>
-  <div class="form-check float-left">
+  <div class="form-check float-left mt-1">
     <input
       type="checkbox"
       class="form-check-input"
@@ -7,7 +7,13 @@
       (click)="completeItem()"/>
   </div>
   <span
-    [ngClass]="{'todo-complete': item.completed}"
-  >{{item.title}}</span>
- <button class="close" (click)="removeItem()"><span>&times;</span></button>
+    class="lead"
+    [ngClass]="{'text-muted': item.completed}"
+  >
+    <del *ngIf="item.completed">{{item.title}}</del>
+    <span *ngIf="!item.completed">{{item.title}}</span>
+  </span>
+  
+  <button class="close" (click)="removeItem()"><span class="text-danger">🞮</span></button>
+  <button class="close mr-2" ><span class="text-success">🖉</span></button>
 </div>
