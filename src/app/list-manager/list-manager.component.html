@@ -9,7 +9,10 @@
 
     <li class="list-group-item mx-3 bg-secondary text-light"
       *ngFor="let todoItem of todoList">
-    <app-todo-item [item]="todoItem"></app-todo-item>
+    <app-todo-item
+      [item]="todoItem"
+      (remove)="removeItem($event)"
+    ></app-todo-item>
     </li>
   </ul>
 </div>

@@ -13,8 +13,12 @@ export class ListManagerComponent implements OnInit {
 
   constructor(private todoListService: TodoListService) {}
 
-  addItem(title: any) {
+  addItem(title: string) {
     this.todoListService.addItem({title});
+  }
+
+  removeItem(item: TodoItem): void {
+    this.todoListService.deleteItem(item);
   }
 
   ngOnInit(): void {
